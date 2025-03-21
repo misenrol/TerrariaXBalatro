@@ -199,7 +199,7 @@ SMODS.Joker{
         name = 'Eater of Worlds',
         text = {
             'For every {C:attention}Consumable{} used,',
-            'gain {C:mult}+3{} Mult',
+            'gain {C:mult}+2{} Mult',
             '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}',
         }
     },
