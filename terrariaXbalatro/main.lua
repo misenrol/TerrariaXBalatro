@@ -621,11 +621,11 @@ SMODS.Joker{
         name = 'Plantera',
         text = {
             'If played hand contains a {C:attention}Four of a Kind{}',
-            'increase payout by {C:money}+$4{}',
+            'increase payout by {C:money}+$2{}',
             '{C:inactive}(Currently {C:money}$#1#{}{C:inactive}){}'
         }
     },
-    config = { extra = { money = 0, m_gain = 4 } },
+    config = { extra = { money = 0, m_gain = 2 } },
     rarity = 3,
     cost = 8,
     blueprint_compat = true,
@@ -637,7 +637,7 @@ SMODS.Joker{
     pos = { x = 5, y = 1 },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.money or 0, card.ability.extra.m_gain or 4 } }
+        return { vars = { card.ability.extra.money or 0, card.ability.extra.m_gain or 2 } }
     end,
 
     calc_dollar_bonus = function(self, card)
@@ -713,7 +713,7 @@ SMODS.Joker{
     config = { extra = {xchips = 2} },
     pos = {x = 1, y = 2},
     cost = 7,
-    rarity = 2,
+    rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
