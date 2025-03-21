@@ -14,4 +14,4 @@ Requirments:
 -Latest version of Steammod Loader
 -Love Injector
 
-Made with love by Misenrol & MegarkShark
+Made with love: by Misenrol & MegarkShark
