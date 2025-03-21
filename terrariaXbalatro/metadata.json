@@ -1,0 +1,17 @@
+{
+    "id": "TerrariaxBalatro",
+    "name": "Terraria",
+    "display_name": "Terraria",
+    "author": ["Misenrol, MegarkShark"],
+    "description": "Something suspicious is brewing...",
+    "prefix": "terraria",
+    "main_file": "main.lua",
+    "priority": 0,
+    "badge_colour": "46D13A",
+    "badge_text_colour": "FCFCFC",
+    "version": "1.0.0",
+    "dependencies": [
+        "Steamodded (1.0.0 beta (0312b))",
+        "Lovely (0.7)"
+    ]
+}
