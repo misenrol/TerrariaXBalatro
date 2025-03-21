@@ -561,7 +561,7 @@ SMODS.Joker{
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if next(context.poker_hands['Flush']) or next(context.poker_hands['Five of a Kind']) or next(context.poker_hands['Straight']) then
+            if next(context.poker_hands['Flush']) or next(context.poker_hands['Five of a Kind']) or next(context.poker_hands['Straight']) or next(context.poker_hands['Full House']) then
                 return {
                     Xmult = card.ability.extra.Xmult,
                     card = other
