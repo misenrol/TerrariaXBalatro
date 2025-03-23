@@ -1,4 +1,5 @@
-# TerrariaXBalatro
+![Logo](https://github.com/user-attachments/assets/77c31e16-45da-419c-94d4-c53c96761f79)
+
 ## 17 NEW BOSS INSPIRED JOKERS
 
 Mod Features:
