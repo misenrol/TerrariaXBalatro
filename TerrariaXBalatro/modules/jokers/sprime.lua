@@ -1,9 +1,9 @@
 SMODS.Joker{
     key = 'sprime',
     atlas = 'Jokers',
-    pos = {x = 1, y = 1},
+    pos = {x = 3, y = 1},
 
-    cost = 9,
+    cost = 10,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = true,
@@ -12,7 +12,7 @@ SMODS.Joker{
     config = { extra = {} },
 
     calculate = function(self, card, context)
-        if context.before and next(context.poker_hands['Four of a Kind']) then
+        if context.before and context.scoring_name == 'Three of a Kind' then
     
             -- Flip animation + sound
             for i = 1, #context.scoring_hand do

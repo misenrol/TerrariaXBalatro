@@ -1,7 +1,7 @@
 SMODS.Joker{
     key = 'queenbee',
     atlas = 'Jokers',
-    pos = { x = 5, y = 0 },
+    pos = { x = 0, y = 1 },
 
     cost = 5,
     rarity = 1,

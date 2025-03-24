@@ -1,9 +1,9 @@
 SMODS.Joker{
     key = 'pumpkinmoon',
     atlas = 'Jokers',
-    pos = { x = 3, y = 3 },
+    pos = { x = 0, y = 5 },
 
-    cost = 6,
+    cost = 8,
     rarity = 2,
     blueprint_compat = false,
     eternal_compat = true,
@@ -13,12 +13,12 @@ SMODS.Joker{
     config = { extra = { money = 8}},
 
     calculate = function(self, card, context)
-        if context.joker_main and (context.poker_hands['Three of a Kind']) then
+        if context.joker_main and context.scoring_name == 'Three of a Kind' then
             return{
                 dollars = 8
             }
         end
-        if context.cardarea == G.play and (context.poker_hands['Three of a Kind']) and context.destroy_card then
+        if context.cardarea == G.play and context.scoring_name == 'Three of a Kind' and context.destroy_card then
             return{
                 remove = true
             }

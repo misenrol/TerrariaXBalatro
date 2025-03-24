@@ -1,7 +1,7 @@
 SMODS.Joker{
     key = 'dprime',
     atlas = 'Jokers',
-    pos = {x = 2, y = 1},
+    pos = {x = 4, y = 1},
 
     cost = 8,
     rarity = 3,

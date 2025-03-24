@@ -1,19 +1,30 @@
 SMODS.Joker{
     key = 'solareclipse',
     atlas = 'Jokers',
-    pos = {x = 0, y = 0},
+    pos = {x = 3, y = 5},
 
-    cost = 9,
+    cost = 12,
     rarity = 3,
     blueprint_compat = false,
     eternal_compat = true,
     unlocked = true,
     discovered = true,
-    config = { extra = {} },
+    config = {
+        extra = {
+            odds = 8
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                (G.GAME.probabilities.normal or 1),
+                card.ability.extra.odds
+            }
+        }
+    end,
 
     calculate = function(self, card, context)
-        if context.before and next(context.poker_hands['Four of a Kind']) then
-    
+        if context.before and pseudorandom('SOLAR_ECLIPSE_TRIGGER') < (G.GAME.probabilities.normal / card.ability.extra.odds) then
             -- Flip animation + sound
             for i = 1, #context.scoring_hand do
                 local percent = 1.15 - (i - 0.999) / (#context.scoring_hand - 0.998) * 0.3
@@ -24,14 +35,10 @@ SMODS.Joker{
     
             delay(0.2)
     
-            -- Apply Steel enhancement to all non-stone cards
+            -- Apply Poly enhancement to all cards
             for i = 1, #context.scoring_hand do
                 local this_card = context.scoring_hand[i]
-                if this_card.config.center_key ~= 'm_stone' then
-                    if not SMODS.has_enhancement(this_card, 'm_lucky') then
-                        this_card:set_ability(G.P_CENTERS.m_lucky, nil, true)
-                    end
-                end
+                this_card:set_edition('e_negative', nil, true)
             end
     
             delay(0.3)
@@ -45,6 +52,12 @@ SMODS.Joker{
             end
     
             delay(0.5)
+
+            return{
+                message = 'Eclipsed!',
+                colour = G.C.RED
+            }
         end
     end
-}
+}    
+

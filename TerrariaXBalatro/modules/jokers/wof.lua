@@ -24,7 +24,7 @@ end
 SMODS.Joker {
 	key = 'wof',
     atlas = 'Jokers',
-	pos = { x = 0, y = 1 },
+	pos = { x = 2, y = 1 },
 
 	blueprint_compat = true,
 	perishable_compat = true,

@@ -1,13 +1,13 @@
 SMODS.Joker{
     key = 'moonlord',
     atlas = 'Jokers',
-    pos = { x = 3, y = 3 },
-    soul_pos = {x = 3, y = 2},
+    pos = { x = 0, y = 4 },
+    soul_pos = {x = 0, y = 3},
 
-    cost = 10,
+    cost = 20,
     rarity = 4,
     blueprint_compat = true,
-    eternal_compat = true,
+    eternal_compat = false,
     unlocked = true,
     unlock_card = true,
     discovered = true,
@@ -25,7 +25,7 @@ SMODS.Joker{
 
             }
         end
-        if context.selling_card then
+        if context.selling_card and not context.blueprint then
             card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
             return{
                 message = 'Doom!',
@@ -33,7 +33,7 @@ SMODS.Joker{
                 card = card,
             }
         end
-        if context.using_consumeable then
+        if context.using_consumeable and not context.blueprint then
             card.ability.extra.Xmult = card.ability.extra.Xmult + 0.15
             return{
                 message = 'Doom!',

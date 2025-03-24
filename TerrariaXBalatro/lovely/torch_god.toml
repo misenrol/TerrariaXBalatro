@@ -1,0 +1,65 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# check if torch god is in deck
+[[patches]]
+[patches.pattern]
+target = "back.lua"
+pattern = "if self.name == 'Plasma Deck' and args.context == 'final_scoring_step' then"
+position = "before"
+payload = '''
+local torchgod_exists = function()
+	local torchgod_card = SMODS.find_card("j_terraria_torchgod")
+	if torchgod_card ~= {} then
+		return true
+	end
+	return false
+end
+local calculate_balance = function()
+	return torchgod_exists()
+end
+'''
+match_indent = true
+overwrite = false
+
+
+[[patches]]
+[patches.pattern]
+target = "back.lua"
+pattern = "if self.name == 'Plasma Deck' and args.context == 'final_scoring_step' then"
+position = "at"
+payload = '''
+if ((self.name == 'Plasma Deck') and args.context == 'final_scoring_step') or (torchgod_exists() and args.context == "joker_main") then
+'''
+match_indent = true
+overwrite = true
+
+# visual 
+[[patches]]
+[patches.pattern]
+target = "back.lua"
+pattern = """
+                attention_text({
+                    scale = 1.4, text = text, hold = 2, align = 'cm', offset = {x = 0,y = -2.7},major = G.play
+                })
+"""
+position = "at"
+payload = '''
+if args.context == 'final_scoring_step' then
+	attention_text({
+		scale = 1.4, text = text, hold = 2, align = 'cm', offset = {x = 0,y = -2.7},major = G.play
+	})
+else 
+	attention_text({
+		scale = 0, text = text, hold = 2, align = 'cm', offset = {x = 0,y = -2.7},major = G.play
+	})
+end
+'''
+match_indent = true
+overwrite = true
+
+# payload = '''
+# if (self.name == 'Plasma Deck' or (G.GAME.VictinsCollection and G.GAME.VictinsCollection.equalize)) and args.context == 'final_scoring_step' then
+# ''

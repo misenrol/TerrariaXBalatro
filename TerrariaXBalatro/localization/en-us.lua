@@ -2,7 +2,8 @@
 loc_colour('red') 
 G.ARGS.LOC_COLOURS['pink'] = HEX("F099E1")
 G.ARGS.LOC_COLOURS['cyan'] = HEX("01A68F")
-
+G.ARGS.LOC_COLOURS['gray'] = HEX("87898C")
+G.ARGS.LOC_COLOURS['bone'] = HEX("C9C1A7")
 return {
     descriptions = {
         Back={},
@@ -14,72 +15,72 @@ return {
             j_terraria_kingslime = {
                 name = 'King Slime',
                 text = {
-                    '{C:chips}+#1#{} Chips for,',
+                    '{C:chips}+#1#{} Chips for',
                     'each {C:attention}Joker{} card',
-                    '{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)',
+                    '{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)'
                 }
             },
 
             j_terraria_eyeofcthulhu = {
                 name = 'Eye of Cthulhu',
                 text = {
-                    'Each {C:red}Discard{} left,',
-                    '{C:mult}+#1#{} Mult per card played',
+                    'Played cards give',
+                    '{C:mult}+#1#{} Mult x {C:red}discards{} remaining',
+                    'when scored'
                 }
             },
 
             j_terraria_eaterofworlds = {
                 name = 'Eater of Worlds',
                 text = {
-                    'Each {C:attention}Consumable{} used,',
-                    'gives {C:mult}+2{} Mult',
-                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}',
+                    'This Joker gains {C:mult}+2{} Mult',
+                    'when a consumable is used',
+                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}'
                 }
             },
 
             j_terraria_brainofcthulhu = {
                 name = 'Brain of Cthulu',
                 text = {
-                    'If played hand,',
-                    'contains a {C:red}Heart{}{C:attention} Flush{},',
-                    'gain a random {C:tarot}Tarot{} card'
+                    'If played hand',
+                    'contains a {C:hearts}Heart{}{C:attention} Flush{}',
+                    'create a {C:tarot}Tarot{} card'
                 }
             },
 
             j_terraria_queenbee = {
                 name = 'Queen Bee',
                 text = {
-                    'Played cards that are {C:attention}Gold Queen{}',
-                    'give {C:money}+$7{}'
+                    'Played {C:attention}Gold Queens{}',
+                    'earn {C:money}+$7{} when scored'
                 }
             },
 
             j_terraria_skeletron = {
                 name = 'Skeletron',
                 text = {
-                    'Played cards that are {C:attention} Stone{},',
-                    'give {C:mult}+#1#{} Mult and,',
-                    'Each {C:attention}Stone{} held in hand,',
-                    'gives {C:chips}+#2#{} Chips'
+                    '{C:attention}Stone{} cards give {C:mult}+#1#{} Mult ',
+                    'when scored and',
+                    ' {C:chips}+#2#{} Chips when held in hand'
                 }
             },
 
             j_terraria_wof = {
                 name = 'Wall of Flesh',
                 text = {
-                    "If played hand contains a,",
-                    "{V:1}#1# {C:attention}Flush{} gain a,",
-                    "random {C:tarot}Spectral{} card,",
-                    "suit changes every round",
+                    "If played hand contains a",
+                    "{V:1}#1# {C:attention}Flush{},",
+                    "create a {C:spectral}Spectral{} card",
+                    "{s:0.8}suit changes at end of round"
                 }
             },
 
             j_terraria_queenslime = {
                 name = 'Queen Slime',
                 text = {
-                    '{X:mult,C:white}x0.5{} Mult for,',
+                    '{X:mult,C:white}x0.5{} Mult for',
                     'each {C:attention}Joker{} card',
-                    '{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult)',
+                    '{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult)'
                 }
             },
 
@@ -87,108 +88,207 @@ return {
                 name = 'Skeletron Prime',
                 text = {
                     'If played hand contains a {C:attention}Four of a Kind{},',
-                    'played scored cards into {C:attention}Steel{}'
+                    'all scored cards become {C:attention}Steel{}'
                 }
             },
 
             j_terraria_dprime = {
                 name = 'The Destroyer',
                 text = {
-                    'If played {C:attention}5{} cards,',
-                    '{X:mult,C:white}x1.5{} on all cards',
+                    'If hand contains {C:attention}5{} scoring cards,',
+                    'all cards give {X:mult,C:white}x1.5{} Mult when scored'
                 }
             },
 
             j_terraria_tprime = {
                 name = 'The Twins',
                 text = {
-                    'If played hand contains a {C:attention}Two Pair{},',
-                    'gain {X:mult,C:white}x0.1{}',
-                    '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult){}',
+                    'This Joker gains {X:mult,C:white}x0.2{} Mult ',
+                    'if played hand is a {C:attention}Two Pair{}',
+                    '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult){}'
                 }
             },
 
             j_terraria_plantera = {
                 name = 'Plantera',
                 text = {
-                    'If played hand contains a {C:attention}Four of a Kind{},',
-                    'increase payout by {C:money}+$#2#{}',
-                    '{C:inactive}(Currently {C:money}$#1#{}{C:inactive}){}'
+                    'Earn {C:money}$#1#{} at end of round, ',
+                    'payout increases by {C:money}+$#2#{} if played ',
+                    'hand contains a {C:attention}Four of a Kind{}'
                 }
             },
 
             j_terraria_golem = {
                 name = 'Golem',
                 text = {
-                    '{C:chips}+#1#{} Chips per card played and,',
-                    'Each {C:attention}Stone{} held in hand,',
-                    'gain {X:chips,C:white}x#2#{} Chips',
+                    'Cards give {C:chips}+#1#{} Chips when scored',
+                    'and {C:attention}Stone{} cards give {X:chips,C:white}x#2#{} Chips',
+                    'when held in hand'
                 }
             },
 
             j_terraria_duke = {
                 name = 'Duke Fisheron',
                 text = {
-                    '{X:chips,C:white}x#1#{} Chips,',
-                    'per card played',
+                    'Cards give {X:chips,C:white}x#1#{} Chips',
+                    'when scored'
                 }
             },
 
             j_terraria_cultist = {
                 name = 'Lunatic Cultist',
                 text = {
-                    'When a {C:attention}Blind{} is {C:attention}defeated{},',
-                    'or at the end of {C:attention}Shopping{},',
-                    'gain a random {C:tarot}Charm Pack{},',
-                    '{C:tarot}Meteor Pack{} or a {C:tarot}Ethereal Pack{}',
+                    'When a {C:attention}Blind{} is {C:attention}defeated{}',
+                    'or at the end of the {C:attention}Shop{},',
+                    'create a random {C:attention}Charm Tag{},',
+                    '{C:attention}Meteor Tag{}, or a {C:attention}Ethereal Tag{}'
                 }
             },
 
             j_terraria_pumpkinmoon = {
                 name = 'Pumpkin Moon',
                 text = {
-                    'If hand played is a {C:attention}Three of a Kind{},',
-                    '{C:attention}Destroy{} all played cards and,',
-                    'gain {C:money}+$8{}'
+                    'If hand is a {C:attention}Three of a Kind{},',
+                    '{C:attention}Destroy{} all played cards and',
+                    'earn {C:money}+$8{}'
                 }
             },
 
             j_terraria_frostmoon = {
                 name = 'Frost Moon',
                 text = {
-                    'If hand played contains a {C:attention}Three of a Kind{},',
-                    'convert played hand into {C:attention}Glass{}'
+                    'If hand played is a {C:attention}Three of a Kind{},',
+                    'all scored cards become {C:attention}Glass{}',
                 }
             },
 
             j_terraria_solareclipse = {
                 name = 'Solar Eclipse',
                 text = {
-                    'If hand played contains a {C:attention}Three of a Kind{} and,',
-                    'every card is {C:attention}Lucky{}',
-                    '{C:attention}Retrigger{} all played cards',
+                    '{C:green}#1# in #2#{} chance for all',
+                    'scored cards in hand',
+                    'to become {C:dark_edition}Negative{}'
+                }
+            },
+
+            j_terraria_bloodmoon = {
+                name = 'Blood Moon',
+                text = {
+                    "This {C:attention}Joker{} gains {C:mult}+0.5{} Mult",
+                    "for every {C:red}Heart{} scored",
+                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult)"
+            },
+            },
+
+            j_terraria_sandel = {
+                    name = 'Sand Elemental',
+                    text = {
+                        'This Joker gains {X:mult,C:white}1x{} Mult',
+                        'every {C:attention}Face{} card scored',
+                        'Resets every round',
+                        '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult)',
+                },
+            },
+
+            j_terraria_mshark = {
+                name = 'Mini Shark',
+                text = {
+                    'Played cards give {C:mult}+#1#{} Mult,',
+                    '{C:mult}-1{} per card scored'
+                }
+            },
+
+            j_terraria_megashark = {
+                name = 'Mega Shark',
+                text = {
+                    'Played cards give {X:mult,C:white}x#1#{} Mult,',
+                    '{X:mult,C:white}-x0.05{} Mult per card scored'
+                }
+            },
+
+            j_terraria_slimestaff = {
+                name = 'Slime Staff',
+                text = {
+                    '{X:chips,C:white}x0.75{} Chips for',
+                    'each {C:attention}Joker{} card',
+                    '{C:inactive}(Currently {X:chips,C:white}x#2#{C:inactive} Chips)'
+                }
+            },
+
+            j_terraria_rainbowrod = {
+                name = 'Rainbow Rod',
+                text = {
+                    'This {C:attention}Joker{} gains',
+                    '{C:mult}+#2#{} Mult and {C:chips}+#4#{} Chips',
+                    'if poker hand contains a',
+                    '{C:diamonds}Diamond{} card, {C:clubs}Club{} card,',
+                    '{C:hearts}Heart{} card and {C:spades}Spade{} card',
+                    '{C:inactive}(Currently{} {C:mult}+#1#{}{C:inactive} Mult and {C:chips}+#3#{}{C:inactive} Chips)',
+                }
+            },
+
+            j_terraria_meowmere = {
+                name = '{C:pink}Meowmere{}',
+                text = {
+                    '{C:dark_edition}Polychrome{} cards give',
+                    'an additional {X:mult,C:white}x2.5{} Mult',
+                    'when scored'
+                }
+            },
+
+            j_terraria_dg = {
+                name = '{C:bone}Dungeon Guardian{}',
+                text = {
+                    'Each {C:attention}Stone{} held in hand',
+                    'gives {X:chips,C:white}x2{} Chips,',
+                    'Played cards become {C:attention}Stone{}',
+                }
+            },
+
+            j_terraria_mechdusa = {
+                name = '{C:gray}Mechdusa{}',
+                text = {  
+                    'Each {C:attention}Steel{}',
+                    'held in hand,',
+                    'gives an additional {X:mult,C:white}x2.5{} Mult'
+                }
+            },
+
+            j_terraria_torchgod = {
+                name = '{C:dark_edition}Torch God',
+                text = {
+                    '{C:mult}+300{} Mult and {C:chips}+300{} Chips,',
+                    'Balance {C:chips}Chips{} and {C:mult}Mult{}',
+                    'when this {C:attention}Joker{} triggers'
                 }
             },
 
             j_terraria_eol = {
-                name = '{C:pink}Empress of Light{}',
+                name = '{C:dark_edition}Empress of Light{}',
                 text = {
-                'Every card {C:attention}played{},',
-                'converts into {C:pink}Polychrome{}',
+                    'Played cards become {C:dark_edition}Polychrome{}',
+                    'when {C:attention}scored{}'
                 },
             },
 
             j_terraria_moonlord = {
                 name = '{C:cyan}Moon Lord{}',
                 text = {
-                    'Every card {C:attention}sold{},',
-                    'gain {X:mult,C:white}x#2#{} Mult',
-                    'Every consumable {C:attention}used{},',
-                    'gain {X:mult,C:white}x0.15{} Mult,',
-                    '{C:inactive}(Currently {X:mult,C:white}x#1#{} {C:inactive}Mult){}',
+                    'Gain {X:mult,C:white}x#2#{} Mult',
+                    'when a card is {C:attention}sold{},',
+                    'gain {X:mult,C:white}x0.15{} Mult',
+                    'when a consumable is {C:attention}used{}',
+                    '{C:inactive}(Currently {X:mult,C:white}x#1#{} {C:inactive}Mult){}'
                 },
-            }
+            },
 
+            j_terraria_treasurebag = {
+                name = '{C:dark_edition}Treasure Bag',
+                text = {
+                    'When this {C:attention}Joker{} is sold',
+                    'add a random Terraria {C:dark_edition}Legendary{} Joker'
+                },
+            },
         },
         Other={},
         Planet={},

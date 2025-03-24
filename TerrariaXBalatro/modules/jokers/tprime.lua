@@ -1,10 +1,10 @@
 SMODS.Joker{
     key = 'tprime',
     atlas = 'Jokers',
-    pos = { x = 3, y = 1},
+    pos = { x = 0, y = 2},
 
     rarity = 2,
-    cost = 7,
+    cost = 8,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -24,7 +24,7 @@ SMODS.Joker{
 
             }
         end
-        if context.before and next(context.poker_hands['Two Pair']) and not context.blueprint then
+        if context.before and context.scoring_name == 'Two Pair' and not context.blueprint then
             card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
             return {
                    message = 'Feast!',

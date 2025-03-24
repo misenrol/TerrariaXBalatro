@@ -1,22 +1,33 @@
 SMODS.Joker{
-    key = 'frostmoon',
+    key = 'dg',
     atlas = 'Jokers',
-    pos = { x = 1, y = 5 },
+    pos = {x = 2, y = 4},
+    soul_pos = {x = 2, y = 3},
 
-    cost = 9,
-    rarity = 3,
+    cost = 20,
+    rarity = 4,
     blueprint_compat = false,
-    eternal_compat = true,
+    eternal_compat = false,
+    perishable_compat = false,
     unlocked = true,
     discovered = true,
-    config = { vars = {} },
+    config = { extra = { xchips = 2} },
 
-    loc_var = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {G.P_CENTERS.m_glass}
+    loc_vars = function(self, info_queue, card)
+        return{
+            vars = {card.ability.extra.xchips}
+        }
     end,
 
-    calculate = function(self, card, context)
-        if context.before and context.scoring_name == 'Three of a Kind' then
+    calculate = function(self,card,context)
+        if context.individual and context.cardarea == G.hand and not context.end_of_round then
+            if SMODS.has_enhancement(context.other_card, 'm_stone') then
+                return {
+                    xchips = self.config.extra.xchips
+                }
+            end
+        end
+        if context.before then
     
             -- Flip animation + sound
             for i = 1, #context.scoring_hand do
@@ -32,8 +43,8 @@ SMODS.Joker{
             for i = 1, #context.scoring_hand do
                 local this_card = context.scoring_hand[i]
                 if this_card.config.center_key ~= 'm_stone' then
-                    if not SMODS.has_enhancement(this_card, 'm_glass') then
-                        this_card:set_ability(G.P_CENTERS.m_glass, nil, true)
+                    if not SMODS.has_enhancement(this_card, 'm_stone') then
+                        this_card:set_ability(G.P_CENTERS.m_stone, nil, true)
                     end
                 end
             end

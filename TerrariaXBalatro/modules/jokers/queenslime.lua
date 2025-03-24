@@ -1,7 +1,7 @@
 SMODS.Joker{
     key = 'queenslime',
     atlas = 'Jokers',
-    pos = {x = 4, y = 1},
+    pos = {x = 1, y = 1},
 
     cost = 5,
     rarity = 2,
@@ -10,8 +10,7 @@ SMODS.Joker{
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'Jokers',
-    config = { extra = { Xmult = 0.5} },
+    config = { extra = { Xmult = 1} },
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.Xmult, (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult}}

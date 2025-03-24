@@ -1,13 +1,13 @@
 SMODS.Joker{
     key = 'eol',
     atlas = 'Jokers',
-    pos = { x = 4, y = 3 },
+    pos = { x = 1, y = 4 },
+    soul_pos = { x = 1, y = 3},
 
-    soul_pos = { x = 4, y = 2},
-    cost = 10,
+    cost = 20,
     rarity = 4,
     blueprint_compat = false,
-    eternal_compat = true,
+    eternal_compat = false,
     unlocked = true,
     discovered = true,
 
