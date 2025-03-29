@@ -52,7 +52,7 @@ SMODS.Joker {
 			not context.blueprint
 		then
             if (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 2
+                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 
                 G.E_MANAGER:add_event(Event({
                     func = function()

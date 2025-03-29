@@ -19,7 +19,7 @@ SMODS.Joker{
     calculate = function(self, card, context)
             if context.cardarea == G.play and context.individual and next(context.poker_hands['Flush']) and context.other_card:is_suit('Hearts') then
                 if (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-                    G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 2
+                    G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
     
                     G.E_MANAGER:add_event(Event({
                         func = function()

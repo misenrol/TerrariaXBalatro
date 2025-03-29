@@ -40,7 +40,7 @@ return {
             },
 
             j_terraria_brainofcthulhu = {
-                name = 'Brain of Cthulu',
+                name = 'Brain of Cthulhu',
                 text = {
                     'If played hand',
                     'contains a {C:hearts}Heart{}{C:attention} Flush{}',
@@ -87,7 +87,7 @@ return {
             j_terraria_sprime = {
                 name = 'Skeletron Prime',
                 text = {
-                    'If played hand contains a {C:attention}Four of a Kind{},',
+                    'If played hand is a {C:attention}Four of a Kind{},',
                     'all scored cards become {C:attention}Steel{}'
                 }
             },
@@ -103,7 +103,7 @@ return {
             j_terraria_tprime = {
                 name = 'The Twins',
                 text = {
-                    'This Joker gains {X:mult,C:white}x0.2{} Mult ',
+                    'This Joker gains {X:mult,C:white}x0.15{} Mult ',
                     'if played hand is a {C:attention}Two Pair{}',
                     '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult){}'
                 }
@@ -257,7 +257,7 @@ return {
             j_terraria_torchgod = {
                 name = '{C:dark_edition}Torch God',
                 text = {
-                    '{C:mult}+300{} Mult and {C:chips}+300{} Chips,',
+                    '{C:mult}+100{} Mult and {C:chips}+100{} Chips,',
                     'Balance {C:chips}Chips{} and {C:mult}Mult{}',
                     'when this {C:attention}Joker{} triggers'
                 }
@@ -267,7 +267,10 @@ return {
                 name = '{C:dark_edition}Empress of Light{}',
                 text = {
                     'Played cards become {C:dark_edition}Polychrome{}',
-                    'when {C:attention}scored{}'
+                    'when {C:attention}scored{}',
+                    '{C:dark_edition}Polychrome{} cards give',
+                    'an additional {X:mult,C:white}x1.5{} Mult',
+                    'when scored'
                 },
             },
 

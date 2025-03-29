@@ -76,7 +76,7 @@ SMODS.current_mod.extra_tabs = function()
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "Programmers: Misenrol",
+                    text = "Programmers: Misenrol, row_set_te",
                     shadow = false,
                     scale = scale,
                     colour = G.C.GREEN
@@ -112,7 +112,7 @@ SMODS.current_mod.extra_tabs = function()
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "Concepting: Misenrol, MegarkShark",
+                    text = "Concepting: Misenrol, MegarkShark, row_set_te",
                     shadow = false,
                     scale = scale*0.6,
                     colour = G.C.BLACK

@@ -11,7 +11,7 @@ SMODS.Joker{
     discovered = true,
     config = {
         extra = {
-            odds = 8
+            odds = 12
         }
     },
     loc_vars = function(self, info_queue, card)

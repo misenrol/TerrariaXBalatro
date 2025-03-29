@@ -6,10 +6,11 @@ SMODS.Joker{
 
     cost = 20,
     rarity = 4,
-    blueprint_compat = false,
+    blueprint_compat = true,
     eternal_compat = false,
     unlocked = true,
     discovered = true,
+    config = { extra = { Xmult = 1.5} },
 
     calculate = function(self, card, context)
         if context.before then
@@ -41,6 +42,14 @@ SMODS.Joker{
             end
     
             delay(0.5)
+        end
+
+        if context.individual and context.cardarea == G.play and (context.other_card.edition or {}).key == 'e_polychrome' then
+            return {
+                Xmult = card.ability.extra.Xmult,
+                message = "Shiny!",
+                card = other_card
+            }
         end
     end
 }

@@ -10,7 +10,7 @@ SMODS.Joker {
     eternal_compat = false,
     unlock_card = true,
     discovered = true,
-    yes_pool_flag = "mshark_destroyed",
+    yes_pool_flag = 'mshark_destroyed',
 
     config = {
         extra = {

@@ -12,7 +12,7 @@ SMODS.Joker{
     config = { extra = {} },
 
     calculate = function(self, card, context)
-        if context.before and context.scoring_name == 'Three of a Kind' then
+        if context.before and context.scoring_name == 'Four of a Kind' then
     
             -- Flip animation + sound
             for i = 1, #context.scoring_hand do

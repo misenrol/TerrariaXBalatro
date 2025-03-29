@@ -10,7 +10,7 @@ SMODS.Joker{
     perishable_compat = true,
     unlock_card = true,
     discovered = true,
-    config = { extra = { Xmult = 1, Xmult_gain = 0.2 } },
+    config = { extra = { Xmult = 1, Xmult_gain = 0.15 } },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.Xmult, card.ability.extra.Xmult_gain } }

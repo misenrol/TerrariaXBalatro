@@ -10,7 +10,7 @@ SMODS.Joker{
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    config = { extra = {xchips = 2} },
+    config = { extra = {xchips = 2.5} },
 
     loc_vars = function(self, info_queue, card)
         return{
