@@ -12,7 +12,7 @@ SMODS.Joker{
     config = { extra = { xchips = 0.75} },
 
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.xchips, (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.xchips}}
+        return {vars = {card.ability.extra.xchips, 1+(G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.xchips}}
     end,
 
     calculate = function(self, card, context)
