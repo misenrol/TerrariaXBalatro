@@ -16,5 +16,7 @@ Requirments:
 -Latest version of Steammod Loader
 -Love Injector
 
+-Not currently compatible with talisman
+
 Made with love: by Misenrol & MegarkShark
 Special thanks to: row_set_te for the Joker descriptions!
