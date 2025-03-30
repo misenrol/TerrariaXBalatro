@@ -45,30 +45,36 @@ SMODS.Joker {
 	end,
 
 	calculate = function(self, card, context)
-		if  context.cardarea == G.play and
-            context.individual and
-			context.other_card:is_suit(G.GAME.current_round.wof_card.suit) and
-            next(context.poker_hands['Flush']) and
-			not context.blueprint
-		then
-            if (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
-                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        SMODS.add_card({ set = 'Spectral' })
-                        
-                        G.GAME.consumeable_buffer = 0   
-
-                        card_eval_status_text(
-                        context.blueprint_card or card,
-                        'extra', nil, nil, nil,
-                        { message = "Guide Died!", colour = G.C.RED }
-                        )
-                        return true
-                    end
-                }))
+		if context.before then
+            local is_correct_flush = true
+            if #context.scoring_hand < 5 then -- checking if hand is at least 5 cards (keeping support for larger playing hand sizes)
+                is_correct_flush = false
             end
+            for _,_card in ipairs(context.scoring_hand) do
+                if _card:is_suit(G.GAME.current_round.wof_card.suit) ~= true then -- iterating through played cards and checking suit
+                    is_correct_flush = false
+                end
+            end
+            if is_correct_flush == true then
+				if (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
+					G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+
+					G.E_MANAGER:add_event(Event({
+						func = function()
+							SMODS.add_card({ set = 'Spectral' })
+							
+							G.GAME.consumeable_buffer = 0   
+
+							card_eval_status_text(
+							context.blueprint_card or card,
+							'extra', nil, nil, nil,
+							{ message = "Guide Died!", colour = G.C.RED }
+							)
+							return true
+						end
+					}))
+				end
+			end
         end
     end
 }
