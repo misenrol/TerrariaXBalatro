@@ -10,7 +10,7 @@ SMODS.Joker{
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    config = { extra = { Xmult = 1} },
+    config = { extra = { Xmult = 0.5} },
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.Xmult, (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult}}
@@ -19,7 +19,7 @@ SMODS.Joker{
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main then
             return{ 
-                Xmult = (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult
+                Xmult = 1 + (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult
             }
         end
     end
