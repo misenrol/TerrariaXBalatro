@@ -13,7 +13,7 @@ SMODS.Joker{
     config = { extra = { Xmult = 0.5} },
 
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.Xmult, (G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult}}
+        return {vars = {card.ability.extra.Xmult, 1+(G.jokers and G.jokers.cards and #G.jokers.cards or 0)*card.ability.extra.Xmult}}
     end,
 
     calculate = function(self, card, context)
