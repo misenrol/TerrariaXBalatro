@@ -17,10 +17,20 @@ SMODS.Joker{
     end,
 
     calculate = function(self, card, context)
-            if context.cardarea == G.play and context.individual and next(context.poker_hands['Flush']) and context.other_card:is_suit('Hearts') then
+        if context.before then
+            local is_heart_flush = true
+            if #context.scoring_hand < 5 then -- checking if hand is at least 5 cards (keeping support for larger playing hand sizes)
+                is_heart_flush = false
+            end
+            for _,_card in ipairs(context.scoring_hand) do -- iterating through played cards and checking suit
+                if _card:is_suit('Hearts') ~= true then
+                    is_heart_flush = false
+                end
+            end
+            if is_heart_flush == true then
                 if (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-    
+
                     G.E_MANAGER:add_event(Event({
                         func = function()
                             SMODS.add_card({ set = 'Tarot' })
@@ -38,5 +48,6 @@ SMODS.Joker{
                     }))
                 end
             end
+        end
     end
 }
