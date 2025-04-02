@@ -16,6 +16,9 @@ SMODS.Atlas{
     py = 95
 }
 
+-- base name for custom global variables
+G.terraria = {}
+
 -- Credits
 SMODS.current_mod.extra_tabs = function()
     local scale = 0.5
