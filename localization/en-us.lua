@@ -21,17 +21,6 @@ return {
                 }
             },
 
-            j_terraria_eyeofcthuJoker={
-
-            j_terraria_kingslime = {
-                name = 'King Slime',
-                text = {
-                    '{C:chips}+#1#{} Chips for',
-                    'each {C:attention}Joker{} card',
-                    '{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)'
-                }
-            },
-
             j_terraria_eyeofcthulhu = {
                 name = 'Eye of Cthulhu',
                 text = {
