@@ -28,7 +28,7 @@ SMODS.Joker{
             end
         end
         
-        if context.after and context.main_eval then
+        if context.after and context.main_eval  and not context.blueprint then
             local valid_hand = #context.scoring_hand >= 5
             if valid_hand ~= true then
                 -- Destroy a random Joker (excluding this one)
