@@ -8,7 +8,7 @@ SMODS.Joker{
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { mult_gain = 1 }},
+    config = { extra = { mult = 0, mult_gain = 1 }},
     pos = { x = 2, y = 5 },
 
     loc_vars = function(self, info_queue, card)
