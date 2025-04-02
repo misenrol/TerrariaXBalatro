@@ -33,9 +33,9 @@ return {
             j_terraria_eaterofworlds = {
                 name = 'Eater of Worlds',
                 text = {
-                    'This Joker gains {C:mult}+2{} Mult',
+                    'This Joker gains {C:mult}+#1#{} Mult',
                     'when a consumable is used',
-                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}'
+                    '{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}'
                 }
             },
 
@@ -274,7 +274,7 @@ return {
                     'Played cards become {C:dark_edition}Polychrome{}',
                     'when {C:attention}scored{}',
                     '{C:dark_edition}Polychrome{} cards give',
-                    'an additional {X:mult,C:white}x1.5{} Mult',
+                    'an additional {X:mult,C:white}x#1#{} Mult',
                     'when scored'
                 },
             },
