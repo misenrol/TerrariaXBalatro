@@ -179,9 +179,9 @@ return {
             j_terraria_bloodmoon = {
                 name = 'Blood Moon',
                 text = {
-                    "This {C:attention}Joker{} gains {C:mult}+1{} Mult",
+                    "This {C:attention}Joker{} gains {C:mult}+#1#{} Mult",
                     "for every {C:red}Heart{} scored",
-                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult)"
+                    "{C:inactive}(Currently {C:mult}+#2#{}{C:inactive} Mult)"
             },
             },
 
