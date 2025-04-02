@@ -10,10 +10,10 @@ SMODS.Joker{
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    config = { extra = {mult = 0, mult_gain = 1} },
+    config = { extra = {mult = 0, mult_gain = 2} },
     
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.mult_mod } }
+        return { vars = {card.ability.extra.mult_gain, card.ability.extra.mult } }
     end,
 
     calculate = function(self, card, context)
