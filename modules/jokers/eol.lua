@@ -10,7 +10,13 @@ SMODS.Joker{
     eternal_compat = false,
     unlocked = true,
     discovered = true,
-    config = { extra = { Xmult = 1.5} },
+    config = { extra = { Xmult = 2} },
+
+    loc_vars = function(self, info_queue, card)
+        return{
+            vars = {card.ability.extra.Xmult}
+        }
+    end,
 
     calculate = function(self, card, context)
         if context.before then

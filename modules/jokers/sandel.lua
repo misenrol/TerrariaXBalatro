@@ -1,3 +1,5 @@
+G.terraria.has_sand_elemental = false
+
 SMODS.Joker{
 	key = 'sandel',
 	atlas = 'Jokers',
@@ -17,28 +19,35 @@ SMODS.Joker{
 	end,
 	
 	calculate = function(self, card, context)
-		if context.joker_main then
-			return {
-				Xmult_mod = card.ability.extra.Xmult,
-				message = localize { type = 'variable', key = 'a_xmult', vars = {card.ability.extra.Xmult } }
-	
-			}
-		end
-		if context.individual and context.cardarea == G.play and context.other_card:is_face() and not context.blueprint then
-			card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
-			play_sound(mikuxbalatro_neru_camera, 1, 10)
-			return{
-				message = 'Upgrade',
-				colour = G.C.YELLOW,
-				card = card,
-			}
-		end
-		if context.end_of_round and not context.repetition and context.game_over == false and not context.blueprint then
-			card.ability.extra.Xmult = 1
-			return {
-				message = 'Swept away!',
-				colour = G.C.RED
-			}
-		end
-	end
+		G.terraria.has_sand_elemental = true
+	end,
+	add_to_deck = function(self, card, from_debuff)
+		G.terraria.has_sand_elemental = true
+	end,
+	renove_from_deck = function(self, card, from_debuff)
+		G.terraria.has_sand_elemental = false
+	end,
 }
+
+
+-- setting up glass cards to work properly
+SMODS.Enhancement:take_ownership('glass',
+	{
+		update = function(self, card, dt)
+			if G.terraria.has_sand_elemental then
+				self.config.Xmult = 1.5
+				self.config.extra = 999999999999999999999999999999
+			else
+				self.config.Xmult = 2
+				self.config.extra = 4
+			end
+		end,
+		loc_vars = function(self, info_queue, card)
+			return { vars = {
+				2,
+				G.GAME.probabilities.normal or 1,
+				4
+			} }
+		end,
+	}, true
+)

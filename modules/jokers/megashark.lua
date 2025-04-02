@@ -36,7 +36,7 @@ SMODS.Joker {
                 if card.ability.extra.Xmult > 0 then
                     return {
                         message = "Pew",
-                        mult = card.ability.extra.Xmult
+                        Xmult = card.ability.extra.Xmult
                     }
                 else
                     -- Trigger animation/sound and then remove card

@@ -33,9 +33,9 @@ return {
             j_terraria_eaterofworlds = {
                 name = 'Eater of Worlds',
                 text = {
-                    'This Joker gains {C:mult}+2{} Mult',
+                    'This Joker gains {C:mult}+#1#{} Mult',
                     'when a consumable is used',
-                    '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}'
+                    '{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}'
                 }
             },
 
@@ -80,7 +80,7 @@ return {
                 text = {
                     '{X:mult,C:white}x0.5{} Mult for',
                     'each {C:attention}Joker{} card',
-                    '{C:inactive}(Currently {X:mult,C:white}x#2#{C:inactive} Mult)'
+                    '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)'
                 }
             },
 
@@ -96,7 +96,9 @@ return {
                 name = 'The Destroyer',
                 text = {
                     'If hand contains {C:attention}5{} scoring cards,',
-                    'all cards give {X:mult,C:white}x1.5{} Mult when scored'
+                    'all cards give {X:mult,C:white}x1.5{} Mult when scored.',
+                    'If hand does {C:attention}not{} contain {C:attention}5{} scoring cards,',
+                    '{C:attention}destroy{} a random {C:attention}joker{} after scoring'
                 }
             },
 
@@ -105,7 +107,7 @@ return {
                 text = {
                     'This Joker gains {X:mult,C:white}x0.15{} Mult ',
                     'if played hand is a {C:attention}Two Pair{}',
-                    '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult){}'
+                    '{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}'
                 }
             },
 
@@ -122,7 +124,7 @@ return {
                 name = 'Golem',
                 text = {
                     'Cards give {C:chips}+#1#{} Chips when scored',
-                    'and {C:attention}Stone{} cards give {X:chips,C:white}x#2#{} Chips',
+                    'and {C:attention}Stone{} cards give {X:chips,C:white}X#2#{} Chips',
                     'when held in hand'
                 }
             },
@@ -130,8 +132,11 @@ return {
             j_terraria_duke = {
                 name = 'Duke Fisheron',
                 text = {
-                    'Cards give {X:chips,C:white}x#1#{} Chips',
-                    'when scored'
+                    'Cards give {X:chips,C:white}X#1#{} Chips',
+                    'when scored.',
+                    '{C:green}#2# in #3#{} chance to',
+                    'destroy a {C:attention}scored{}',
+                    'card'
                 }
             },
 
@@ -174,19 +179,19 @@ return {
             j_terraria_bloodmoon = {
                 name = 'Blood Moon',
                 text = {
-                    "This {C:attention}Joker{} gains {C:mult}+0.5{} Mult",
+                    "This {C:attention}Joker{} gains {C:mult}+#1#{} Mult",
                     "for every {C:red}Heart{} scored",
-                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult)"
+                    "{C:inactive}(Currently {C:mult}+#2#{}{C:inactive} Mult)"
             },
             },
 
             j_terraria_sandel = {
                     name = 'Sand Elemental',
                     text = {
-                        'This Joker gains {X:mult,C:white}1x{} Mult',
-                        'every {C:attention}Face{} card scored',
-                        'Resets every round',
-                        '{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive} Mult)',
+                        '{C:attention}Glass Cards{} only',
+                        'give {X:mult,C:white}x1.5{} Mult.',
+                        'But Glass Cards',
+                        'Never {C:attention}Break{}'
                 },
             },
 
@@ -201,7 +206,7 @@ return {
             j_terraria_megashark = {
                 name = 'Mega Shark',
                 text = {
-                    'Played cards give {X:mult,C:white}x#1#{} Mult,',
+                    'Played cards give {X:mult,C:white}X#1#{} Mult,',
                     '{X:mult,C:white}-x0.05{} Mult per card scored'
                 }
             },
@@ -211,7 +216,7 @@ return {
                 text = {
                     '{X:chips,C:white}x0.75{} Chips for',
                     'each {C:attention}Joker{} card',
-                    '{C:inactive}(Currently {X:chips,C:white}x#2#{C:inactive} Chips)'
+                    '{C:inactive}(Currently {X:chips,C:white}X#2#{C:inactive} Chips)'
                 }
             },
 
@@ -269,7 +274,7 @@ return {
                     'Played cards become {C:dark_edition}Polychrome{}',
                     'when {C:attention}scored{}',
                     '{C:dark_edition}Polychrome{} cards give',
-                    'an additional {X:mult,C:white}x1.5{} Mult',
+                    'an additional {X:mult,C:white}x#1#{} Mult',
                     'when scored'
                 },
             },
@@ -277,11 +282,11 @@ return {
             j_terraria_moonlord = {
                 name = '{C:cyan}Moon Lord{}',
                 text = {
-                    'Gain {X:mult,C:white}x#2#{} Mult',
+                    'Gain {X:mult,C:white}X#2#{} Mult',
                     'when a card is {C:attention}sold{},',
                     'gain {X:mult,C:white}x0.15{} Mult',
                     'when a consumable is {C:attention}used{}',
-                    '{C:inactive}(Currently {X:mult,C:white}x#1#{} {C:inactive}Mult){}'
+                    '{C:inactive}(Currently {X:mult,C:white}X#1#{} {C:inactive}Mult){}'
                 },
             },
 

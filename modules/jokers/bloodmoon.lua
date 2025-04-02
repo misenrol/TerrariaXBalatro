@@ -1,26 +1,26 @@
 SMODS.Joker{
     key = 'bloodmoon',
-    config = {extra = {mult = 0, mult_gain = 0.5} },
     atlas = 'Jokers',
-    rarity = 1,
+    rarity = 2,
     cost = 4,
     unlocked = true,
     discovered = true,
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    config = { extra = { mult = 0, mult_gain = 1 }},
     pos = { x = 2, y = 5 },
 
     loc_vars = function(self, info_queue, card)
         return{
-            vars = {card.ability.extra.mult, card.ability.extra.mult_gain}
+            vars = {card.ability.extra.mult_gain, card.ability.extra.mult}
         }
     end,
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Hearts") then
-                card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain or 0.5)
+                card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain or 1)
                 return{
                     message = "Blood!",
                     colour = G.C.RED,

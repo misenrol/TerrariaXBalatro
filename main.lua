@@ -16,6 +16,9 @@ SMODS.Atlas{
     py = 95
 }
 
+-- base name for custom global variables
+G.terraria = {}
+
 -- Credits
 SMODS.current_mod.extra_tabs = function()
     local scale = 0.5
@@ -157,6 +160,6 @@ assert(SMODS.load_file("./modules/jokers/meowmere.lua"))()
 assert(SMODS.load_file("./modules/jokers/torchgod.lua"))()
 assert(SMODS.load_file("./modules/jokers/mechdusa.lua"))()
 assert(SMODS.load_file("./modules/jokers/dg.lua"))()
-assert(SMODS.load_file("./modules/jokers/eof.lua"))()
+assert(SMODS.load_file("./modules/jokers/eol.lua"))()
 assert(SMODS.load_file("./modules/jokers/moonlord.lua"))()
 assert(SMODS.load_file("./modules/jokers/treasurebag.lua"))()
