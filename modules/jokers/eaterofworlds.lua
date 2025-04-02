@@ -10,7 +10,7 @@ SMODS.Joker{
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    config = { extra = {mult = 0, mult_gain = 2} },
+    config = { extra = {mult = 0, mult_gain = 1} },
     
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult, card.ability.extra.mult_mod } }
@@ -25,7 +25,7 @@ SMODS.Joker{
             }
         end
         if context.using_consumeable and not context.blueprint then
-            card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain or 2)
+            card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_gain or 1)
             return {
                    message = 'Shivers!',
                    colour = G.C.PURPLE,
