@@ -28,23 +28,9 @@ SMODS.Joker{
 
         end
 
-        if context.after then
-            for i=1, #context.scoring_hand do 
-                if pseudorandom('HUNGERY DUKE :3'..G.SEED) < (G.GAME.probabilities.normal / card.ability.extra.odds) then
-                    G.E_MANAGER:add_event(Event({
-                        trigger = 'after',
-                        delay = 0.2,
-                        func = function() 
-                            local current_card = context.scoring_hand[i]
-                            if SMODS.shatters(current_card) then
-                                current_card:shatter()
-                            else
-                                current_card:start_dissolve(nil, i == #context.scoring_hand)
-                            end
-                            delay(1) -- not quite working as intended, want a delay between cards being destroyed and cards being discarded
-                            return true 
-                        end }))
-                end
+        if context.destroy_card and context.cardarea == G.play then
+            if pseudorandom('HUNGRY DUKE'..G.SEED) < (G.GAME.probabilities.normal / card.ability.extra.odds) then
+                return {remove = true}
             end
         end
     end             
