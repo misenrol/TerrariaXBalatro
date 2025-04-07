@@ -1,5 +1,3 @@
-G.terraria.has_sand_elemental = false
-
 SMODS.Joker{
 	key = 'sandel',
 	atlas = 'Jokers',
@@ -17,29 +15,38 @@ SMODS.Joker{
 			card.ability.extra.Xmult_gain, 
 		} }
 	end,
-	
-	calculate = function(self, card, context)
-		G.terraria.has_sand_elemental = true
-	end,
-	add_to_deck = function(self, card, from_debuff)
-		G.terraria.has_sand_elemental = true
-	end,
-	renove_from_deck = function(self, card, from_debuff)
-		G.terraria.has_sand_elemental = false
-	end,
 }
-
 
 -- setting up glass cards to work properly
 SMODS.Enhancement:take_ownership('glass',
 	{
-		update = function(self, card, dt)
-			if G.terraria.has_sand_elemental then
-				self.config.Xmult = 1.5
-				self.config.extra = 999999999999999999999999999999
-			else
-				self.config.Xmult = 2
-				self.config.extra = 4
+	    calculate = function(self,card,context)
+			local has_sandel = false
+			if #G.jokers ~= 0 then
+				for i=0, #G.jokers do
+					if G.jokers[i].config.center.key == 'j_terraria_sandel' then
+						if G.jokers[i].debuff == false then
+							has_sandel = true
+						end
+					end
+				end
+			end
+			if context.individual and context.cardarea == G.play and not context.end_of_round then
+				if has_sandel then
+					card.ability.extra = 99999999999999999999
+				else
+					card.ability.extra = G.P_CENTERS.m_glass.config.extra
+				end
+				if has_sandel == true then 
+					return {
+						xmult = 1.5
+					}
+				else
+					return {
+						xmult = self.config.Xmult
+					}
+				end
+	
 			end
 		end,
 		loc_vars = function(self, info_queue, card)
