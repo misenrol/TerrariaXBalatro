@@ -78,7 +78,7 @@ return {
             j_terraria_queenslime = {
                 name = 'Queen Slime',
                 text = {
-                    '{X:mult,C:white}x0.5{} Mult for',
+                    '{X:mult,C:white}X0.5{} Mult for',
                     'each {C:attention}Joker{} card',
                     '{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)'
                 }
@@ -96,7 +96,7 @@ return {
                 name = 'The Destroyer',
                 text = {
                     'If hand contains {C:attention}5{} scoring cards,',
-                    'all cards give {X:mult,C:white}x1.5{} Mult when scored.',
+                    'all cards give {X:mult,C:white}X1.5{} Mult when scored.',
                     'If hand does {C:attention}not{} contain {C:attention}5{} scoring cards,',
                     '{C:attention}destroy{} a random {C:attention}joker{} after scoring'
                 }
@@ -189,7 +189,7 @@ return {
                     name = 'Sand Elemental',
                     text = {
                         '{C:attention}Glass Cards{} only',
-                        'give {X:mult,C:white}x1.5{} Mult.',
+                        'give {X:mult,C:white}X1.5{} Mult.',
                         'But Glass Cards',
                         'Never {C:attention}Break{}'
                 },
@@ -214,7 +214,7 @@ return {
             j_terraria_slimestaff = {
                 name = 'Slime Staff',
                 text = {
-                    '{X:chips,C:white}x0.75{} Chips for',
+                    '{X:chips,C:white}X0.75{} Chips for',
                     'each {C:attention}Joker{} card',
                     '{C:inactive}(Currently {X:chips,C:white}X#2#{C:inactive} Chips)'
                 }
@@ -236,7 +236,7 @@ return {
                 name = '{C:pink}Meowmere{}',
                 text = {
                     '{C:dark_edition}Polychrome{} cards give',
-                    'an additional {X:mult,C:white}x2.5{} Mult',
+                    'an additional {X:mult,C:white}X2.5{} Mult',
                     'when scored'
                 }
             },
@@ -245,7 +245,7 @@ return {
                 name = '{C:bone}Dungeon Guardian{}',
                 text = {
                     'Each {C:attention}Stone{} held in hand',
-                    'gives {X:chips,C:white}x2{} Chips,',
+                    'gives {X:chips,C:white}X2{} Chips,',
                     'Played cards become {C:attention}Stone{}',
                 }
             },
@@ -255,7 +255,7 @@ return {
                 text = {  
                     'Each {C:attention}Steel{}',
                     'held in hand,',
-                    'gives an additional {X:mult,C:white}x2.5{} Mult'
+                    'gives an additional {X:mult,C:white}X2.5{} Mult'
                 }
             },
 
@@ -274,7 +274,7 @@ return {
                     'Played cards become {C:dark_edition}Polychrome{}',
                     'when {C:attention}scored{}',
                     '{C:dark_edition}Polychrome{} cards give',
-                    'an additional {X:mult,C:white}x#1#{} Mult',
+                    'an additional {X:mult,C:white}X#1#{} Mult',
                     'when scored'
                 },
             },
@@ -284,7 +284,7 @@ return {
                 text = {
                     'Gain {X:mult,C:white}X#2#{} Mult',
                     'when a card is {C:attention}sold{},',
-                    'gain {X:mult,C:white}x0.15{} Mult',
+                    'gain {X:mult,C:white}X0.15{} Mult',
                     'when a consumable is {C:attention}used{}',
                     '{C:inactive}(Currently {X:mult,C:white}X#1#{} {C:inactive}Mult){}'
                 },
